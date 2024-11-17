@@ -9,11 +9,13 @@
  * @author LENOVO
  */
 public class AplikasiKonversiSuhu extends javax.swing.JFrame {
+    
 
     /**
      * Creates new form AplikasiKonversiSuhu
      */
     public AplikasiKonversiSuhu() {
+         setTitle("APLIKASI KONVERSI SUHU");
         initComponents();
     }
 
@@ -27,48 +29,322 @@ public class AplikasiKonversiSuhu extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        jRadioCelcius = new javax.swing.JRadioButton();
+        jRadioFahrenheit = new javax.swing.JRadioButton();
+        jRadioKelvin = new javax.swing.JRadioButton();
+        jRadioReamur = new javax.swing.JRadioButton();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jTextCelcius = new javax.swing.JTextField();
+        jTextFahrenheit = new javax.swing.JTextField();
+        jTextKelvin = new javax.swing.JTextField();
+        jTextReamur = new javax.swing.JTextField();
+        BtnKonversi = new javax.swing.JButton();
+        BtnReset = new javax.swing.JButton();
+        BtnKeluar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowActivated(java.awt.event.WindowEvent evt) {
+                formWindowActivated(evt);
+            }
+        });
 
-        jLabel2.setText("APLIKASI KONVERSI SUHU ");
+        jLabel1.setFont(new java.awt.Font("Arial Black", 1, 18)); // NOI18N
+        jLabel1.setText("APLIKASI KONVERSI SUHU");
 
-        jLabel3.setText("jLabel3");
+        jRadioCelcius.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jRadioCelcius.setText("Celcius");
+        jRadioCelcius.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioCelciusActionPerformed(evt);
+            }
+        });
+
+        jRadioFahrenheit.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jRadioFahrenheit.setText("Fahrenheit");
+        jRadioFahrenheit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioFahrenheitActionPerformed(evt);
+            }
+        });
+
+        jRadioKelvin.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jRadioKelvin.setText("Kelvin");
+        jRadioKelvin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioKelvinActionPerformed(evt);
+            }
+        });
+
+        jRadioReamur.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jRadioReamur.setText("Reamur");
+        jRadioReamur.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioReamurActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jLabel4.setText("Celcius");
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jLabel5.setText("Fahrenheit");
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jLabel6.setText("Kelvin");
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        jLabel7.setText("Reamur");
+
+        jTextCelcius.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+
+        jTextFahrenheit.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+
+        jTextKelvin.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+
+        jTextReamur.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+
+        BtnKonversi.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        BtnKonversi.setText("Konversi");
+        BtnKonversi.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnKonversiActionPerformed(evt);
+            }
+        });
+
+        BtnReset.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        BtnReset.setText("Hapus");
+        BtnReset.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnResetActionPerformed(evt);
+            }
+        });
+
+        BtnKeluar.setFont(new java.awt.Font("Tahoma", 1, 16)); // NOI18N
+        BtnKeluar.setText("Keluar");
+        BtnKeluar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BtnKeluarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(248, 248, 248)
-                .addComponent(jLabel2)
-                .addGap(44, 44, 44)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 184, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addComponent(jLabel3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(34, 34, 34)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel7))
+                .addGap(55, 55, 55)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jRadioCelcius)
+                        .addGap(27, 27, 27)
+                        .addComponent(jRadioFahrenheit)
+                        .addGap(18, 18, 18)
+                        .addComponent(jRadioKelvin)
+                        .addGap(18, 18, 18)
+                        .addComponent(jRadioReamur))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jTextCelcius, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jTextReamur, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 443, Short.MAX_VALUE)
+                                .addComponent(jTextKelvin, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jTextFahrenheit, javax.swing.GroupLayout.Alignment.LEADING))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(BtnKonversi)
+                                .addGap(39, 39, 39)
+                                .addComponent(BtnReset)
+                                .addGap(39, 39, 39)
+                                .addComponent(BtnKeluar)))))
+                .addContainerGap(137, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(192, 192, 192))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(jLabel2)))
-                .addGap(21, 21, 21)
-                .addComponent(jLabel3)
-                .addContainerGap(267, Short.MAX_VALUE))
+                .addGap(27, 27, 27)
+                .addComponent(jLabel1)
+                .addGap(33, 33, 33)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jRadioCelcius)
+                    .addComponent(jRadioFahrenheit)
+                    .addComponent(jRadioKelvin)
+                    .addComponent(jRadioReamur))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jTextCelcius, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jTextFahrenheit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(jTextKelvin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(jTextReamur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(BtnKonversi)
+                    .addComponent(BtnReset)
+                    .addComponent(BtnKeluar))
+                .addGap(28, 28, 28))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void formWindowActivated(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowActivated
+        jTextCelcius.setEnabled(false);
+         jTextFahrenheit.setEnabled(false);
+          jTextKelvin.setEnabled(false);
+           jTextReamur.setEnabled(false);
+    }//GEN-LAST:event_formWindowActivated
+
+    private void jRadioCelciusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioCelciusActionPerformed
+       if (jRadioCelcius.isSelected()){
+           jTextCelcius.setEnabled(true);
+           jRadioFahrenheit.setEnabled(false);
+          jRadioKelvin.setEnabled(false);
+           jRadioReamur.setEnabled(false);
+       }
+    }//GEN-LAST:event_jRadioCelciusActionPerformed
+
+    private void jRadioFahrenheitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioFahrenheitActionPerformed
+        if (jRadioFahrenheit.isSelected()){
+           jTextFahrenheit.setEnabled(true); 
+           jRadioCelcius.setEnabled(false);
+          jRadioKelvin.setEnabled(false);
+           jRadioReamur.setEnabled(false); 
+    }//GEN-LAST:event_jRadioFahrenheitActionPerformed
+    }
+    
+    private void jRadioKelvinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioKelvinActionPerformed
+        if (jRadioKelvin.isSelected()){
+           jTextKelvin.setEnabled(true); 
+           jRadioCelcius.setEnabled(false);
+          jRadioFahrenheit.setEnabled(false);
+           jRadioReamur.setEnabled(false);  // TODO add your handling code here:
+    }//GEN-LAST:event_jRadioKelvinActionPerformed
+    }
+    private void jRadioReamurActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioReamurActionPerformed
+            if (jRadioReamur.isSelected()){
+           jTextReamur.setEnabled(true); 
+           jRadioCelcius.setEnabled(false);
+          jRadioFahrenheit.setEnabled(false);
+           jRadioKelvin.setEnabled(false); 
+    }//GEN-LAST:event_jRadioReamurActionPerformed
+    }
+    
+    private void BtnKonversiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnKonversiActionPerformed
+      float celcius = 0, fahrenheit, kelvin, reamur;
+      String hcelcius, hfahrenheit, hkelvin, hreamur;
+      
+      if (jRadioCelcius.isSelected()){
+          celcius = Float.parseFloat(jTextCelcius.getText());
+          fahrenheit = ((9/5)*celcius)+32;
+          kelvin = celcius + 273;
+          reamur = (4*celcius)/5;
+          
+          hfahrenheit = String.valueOf(fahrenheit);
+          jTextFahrenheit.setText(hfahrenheit);
+          
+          hkelvin = String.valueOf(kelvin);
+          jTextKelvin.setText(hkelvin);
+          
+          hreamur = String.valueOf(reamur);
+          jTextReamur.setText(hreamur);
+      }
+      
+      if (jRadioFahrenheit.isSelected()){
+          fahrenheit = Float.parseFloat(jTextFahrenheit.getText());
+          celcius = (5*(fahrenheit-32)/9);
+          kelvin = (5*(fahrenheit-32)+273);
+          reamur = (4*(fahrenheit-32)/9);
+          
+          hcelcius = String.valueOf(celcius);
+          jTextCelcius.setText(hcelcius);
+          
+          hkelvin = String.valueOf(kelvin);
+          jTextKelvin.setText(hkelvin);
+          
+          hreamur = String.valueOf(reamur);
+          jTextReamur.setText(hreamur);
+      }
+      
+      if (jRadioKelvin.isSelected()){
+          kelvin = Float.parseFloat(jTextKelvin.getText());
+          celcius = kelvin-273;
+          reamur = (4*(kelvin-273)/5);
+          fahrenheit = (9*(kelvin-273)+32);
+          
+          hcelcius= String.valueOf(celcius);
+          jTextCelcius.setText(hcelcius);
+          
+          hfahrenheit = String.valueOf(fahrenheit);
+          jTextFahrenheit.setText(hfahrenheit);
+          
+          hkelvin = String.valueOf(reamur);
+          jTextReamur.setText(hkelvin);
+      }
+      
+      if (jRadioReamur.isSelected()){
+          reamur = Float.parseFloat(jTextReamur.getText());
+          fahrenheit = (5*reamur)/4;
+          kelvin = ((5*reamur)/4)+273;
+          fahrenheit = ((9*reamur)/4)-32;
+          
+          hcelcius= String.valueOf(celcius);
+          jTextCelcius.setText(hcelcius);
+          
+          hfahrenheit = String.valueOf(fahrenheit);
+          jTextFahrenheit.setText(hfahrenheit);
+          
+          hkelvin = String.valueOf(kelvin);
+          jTextKelvin.setText(hkelvin);
+    }//GEN-LAST:event_BtnKonversiActionPerformed
+    }
+    private void BtnResetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnResetActionPerformed
+       jTextCelcius.setEnabled(false);
+        jTextFahrenheit.setEnabled(false);
+         jTextKelvin.setEnabled(false);
+         jTextReamur.setEnabled(false);
+       
+        jTextCelcius.setText("");
+        jTextFahrenheit.setText("");
+        jTextKelvin.setText("");
+        jTextReamur.setText("");
+        
+        jRadioCelcius.setEnabled(true);
+        jRadioFahrenheit.setEnabled(true);
+        jRadioKelvin.setEnabled(true);
+        jRadioReamur.setEnabled(true);
+        
+        jRadioCelcius.setSelected(false);
+        jRadioFahrenheit.setSelected(false);
+        jRadioKelvin.setSelected(false);
+        jRadioReamur.setSelected(false);
+    }//GEN-LAST:event_BtnResetActionPerformed
+
+    private void BtnKeluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnKeluarActionPerformed
+       dispose();
+    }//GEN-LAST:event_BtnKeluarActionPerformed
+    
     /**
      * @param args the command line arguments
      */
@@ -105,8 +381,21 @@ public class AplikasiKonversiSuhu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BtnKeluar;
+    private javax.swing.JButton BtnKonversi;
+    private javax.swing.JButton BtnReset;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JRadioButton jRadioCelcius;
+    private javax.swing.JRadioButton jRadioFahrenheit;
+    private javax.swing.JRadioButton jRadioKelvin;
+    private javax.swing.JRadioButton jRadioReamur;
+    private javax.swing.JTextField jTextCelcius;
+    private javax.swing.JTextField jTextFahrenheit;
+    private javax.swing.JTextField jTextKelvin;
+    private javax.swing.JTextField jTextReamur;
     // End of variables declaration//GEN-END:variables
 }
